@@ -68,6 +68,10 @@ proxy-service:
 Необходимые тесты для проверки этого API вызываются при запуске npm run test:local из папки tests/postman
 Приложите скриншот тестов и скриншот состояния топиков Kafka из UI http://localhost:8090
 
+[Тесты без MVP сервиса events](./docs/task2/test.png)
+[Топики Kafka](./docs/task2/kafka.png)
+[Тесты с MVP сервиса events](./docs/task2/test-events.png)
+
 # Задание 3
 
 Команда начала переезд в Kubernetes для лучшего масштабирования и повышения надежности.
@@ -315,6 +319,10 @@ minikube tunnel
 #### Шаг 3
 
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и скриншот вывода event-service после вызова тестов.
+
+[https://cinemaabyss.example.com/api/movies](./docs/task3/api-movies.png)
+[Результата тестов](./docs/task3/test.png)
+[Event-service после вызова тестов](./docs/task3/test-events.png)
 
 # Задание 4
 
