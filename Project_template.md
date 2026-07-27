@@ -2,8 +2,6 @@
 
 # Задание 1
 
-[Диаграмма контейнеров ToBe](./docs/Container.md)
-
 1. Users Service
    Отвечает за управление пользователями.
 2. Movies Service
@@ -14,6 +12,9 @@
    Отвечает за финансовые операции.
 5. Events Service
    Отвечает за событийное взаимодействие между сервисами.
+
+- [Диаграмма контейнеров ToBe](./docs/Container.md)
+- [Скриншот](./docs/task1/container.png)
 
 # Задание 2
 
@@ -68,9 +69,9 @@ proxy-service:
 Необходимые тесты для проверки этого API вызываются при запуске npm run test:local из папки tests/postman
 Приложите скриншот тестов и скриншот состояния топиков Kafka из UI http://localhost:8090
 
-[Тесты без MVP сервиса events](./docs/task2/test.png)
-[Топики Kafka](./docs/task2/kafka.png)
-[Тесты с MVP сервиса events](./docs/task2/test-events.png)
+- [Тесты без MVP сервиса events](./docs/task2/test.png)
+- [Топики Kafka](./docs/task2/kafka.png)
+- [Тесты с MVP сервиса events](./docs/task2/test-events.png)
 
 # Задание 3
 
@@ -98,6 +99,7 @@ on:
 ```
 
 и добавить необходимые шаги в блок
+
 
 ```yaml
 jobs:
@@ -287,6 +289,13 @@ kubectl -n cinemaabyss get pod
 - добавьте аддон
 
 ```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+kubectl get pods -n ingress-nginx
+```
+
+или
+
+```bash
 minikube addons enable ingress
 ```
 
@@ -320,9 +329,9 @@ minikube tunnel
 
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и скриншот вывода event-service после вызова тестов.
 
-[https://cinemaabyss.example.com/api/movies](./docs/task3/api-movies.png)
-[Результата тестов](./docs/task3/test.png)
-[Event-service после вызова тестов](./docs/task3/test-events.png)
+- [https://cinemaabyss.example.com/api/movies](./docs/task3/api-movies.png)
+- [Результаты тестов](./docs/task3/test.png)
+- [Event-service после вызова тестов](./docs/task3/test-events.png)
 
 # Задание 4
 
@@ -383,7 +392,8 @@ kubectl delete  namespace cinemaabyss
 Запустите
 
 ```bash
-helm install cinemaabyss .\src\kubernetes\helm --namespace cinemaabyss --create-namespace
+helm template cinemaabyss ./src/kubernetes/helm --namespace cinemaabyss
+helm install cinemaabyss ./src/kubernetes/helm --namespace cinemaabyss --create-namespace
 ```
 
 Если в процессе будет ошибка
@@ -403,6 +413,10 @@ minikube tunnel
 Потом вызовите
 https://cinemaabyss.example.com/api/movies
 и приложите скриншот развертывания helm и вывода https://cinemaabyss.example.com/api/movies
+
+- [helm install](./docs/task4/helm1.png)
+- [Поды](./docs/task4/helm2.png)
+- [https://cinemaabyss.example.com/api/movies](./docs/task4/movies.png)
 
 ## Удаляем все
 
